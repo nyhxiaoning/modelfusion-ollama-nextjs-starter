@@ -9,6 +9,8 @@ export async function POST(req: Request) {
 
   // Use ModelFusion to call Ollama:
   const textStream = await streamText({
+    //  model "llama2:chat"
+    // 本地安装好ollama后，然后拉取一下：ollama pull llama2:chat
     model: ollama.ChatTextGenerator({ model: "llama2:chat" }).withChatPrompt(),
     prompt: {
       system:
